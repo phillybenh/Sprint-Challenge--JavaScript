@@ -15,13 +15,42 @@ class CuboidMaker {
         return 2 * (this.length * this.width + this.length * this.height + this.width * this.height);
     }
 }
+
 const cuboid = new CuboidMaker({
     length: 4,
     width: 5,
     height: 5
 })
+/////Stretch /////
+class CubeMaker extends CuboidMaker {
+    constructor(props) {
+        super(props);
+        this.side = props.side;
+    }
+    easyVolume() {
+        return this.side ** 3;
+    }
+    easySurfArea() {
+        return 6 * this.side ** 2;
+    }
+}
+
+const longCube = new CubeMaker({
+    length: 5,
+    width: 5,
+    height: 5
+})
+
+const shortCube = new CubeMaker({
+    side: 5,
+})
 // Test your volume and surfaceArea methods by uncommenting the logs below:
 console.log(cuboid.volume()); // 100
 console.log(cuboid.surfaceArea()); // 130
+/////Stretch /////
+console.log(`Cube volume when all three dimensions are specified: ${longCube.volume()} units^3`);
+console.log(`Cube surface area when all three dimensions are specified: ${longCube.surfaceArea()} units^2`);
+console.log(`Cube volume when only one dimension is specified: ${shortCube.easyVolume()} units^3`);
+console.log(`Cube surface area when only one dimension is specified: ${shortCube.easySurfArea()} units^2`);
 
 // Stretch Task: Extend the base class CuboidMaker with a sub class called CubeMaker.  Find out the formulas for volume and surface area for cubes and create those methods using the dimension properties from CuboidMaker.  Test your work by logging out your volume and surface area.
