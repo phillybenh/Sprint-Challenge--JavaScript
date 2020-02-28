@@ -70,7 +70,7 @@ const graduates = [
 
 Once you have the new array created, sort the universities alphabetically and log the result. */
 const universities = [];
-const schools = function(graduates, array) {
+const schools = function (graduates, array) {
   for (let i = 0; i < graduates.length; i++) {
     array.push((graduates[i].university));
   }
@@ -86,16 +86,16 @@ The resulting contact information strings should have a space between the first 
 
 Log the result of your new array. */
 const contactInfo = [];
-graduates.forEach( function(item) {
+graduates.forEach(function (item) {
   contactInfo.push(`${item.first_name} ${item.email}`);
 })
 console.log(contactInfo);
 
 /* Request 3: Find out how many universities have the string "Uni" included in their name. Create a new array called unisWithUni that contains them all. This will be an array of objects. Log the result. */
 const unisWithUni = [];
-graduates.forEach(function(item) {
+graduates.forEach(function (item) {
   if (item.university.includes('Uni')) {
-   return unisWithUni.push(item.university);
+    return unisWithUni.push(item.university);
   }
 })
 console.log(unisWithUni);
@@ -124,7 +124,7 @@ The zoos want to display both the scientific name and the animal name in front o
 
 */
 const displayNames = [];
-zooAnimals.forEach(function(item) {
+zooAnimals.forEach(function (item) {
   return displayNames.push(`Name:${item.animal_name}, Scientific: ${item.scientific_name}.`);
 })
 
@@ -136,7 +136,7 @@ The zoos need a list of all their animal's names (animal_name only) converted to
 
 */
 
-const lowCaseAnimalNames = zooAnimals.map(function(item) {
+const lowCaseAnimalNames = zooAnimals.map(function (item) {
   return item.animal_name.toLowerCase();
 });
 console.log(lowCaseAnimalNames);
@@ -156,7 +156,7 @@ console.log(lowPopulationAnimals);
 The zoos need to know their total animal population across the United States. Find the total population from all the zoos using the .reduce() method. Remember the reduce method takes two arguments: a callback (which itself takes two args), and an initial value for the count.
 
 */
-const populationTotal = zooAnimals.reduce(function(accum, item) {
+const populationTotal = zooAnimals.reduce(function (accum, item) {
   return accum + item.population;
 }, 0);
 console.log(populationTotal);
